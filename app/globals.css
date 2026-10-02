@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/*
+ * Estetica "neobanca": fundal gri-verzui deschis, carduri albe foarte rotunjite,
+ * un card intunecat pentru soldul principal, accent verde-lime pentru actiuni.
+ */
+@theme {
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --color-bg: #f1f2ee;
+  --color-surface: #ffffff;
+  --color-dark: #13211a;
+  --color-dark-soft: #1c2e24;
+  --color-accent: #d6f65e;
+  --color-accent-ink: #1c2a16;
+  --color-ink: #14181a;
+  --color-ink-muted: #868c82;
+  --color-credit: #2e7d4f;
+  --color-credit-soft: #e6f3ea;
+  --color-debit: #dd6b4e;
+  --color-debit-soft: #fbe9e3;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+input[type="date"],
+input[type="number"],
+input[type="text"],
+select {
+  font-size: 14px;
+}
+
+.shadow-soft {
+  box-shadow:
+    0 1px 2px rgba(20, 24, 20, 0.04),
+    0 10px 28px -14px rgba(20, 24, 20, 0.16);
+}
