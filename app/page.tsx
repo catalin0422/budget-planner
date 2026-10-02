@@ -257,7 +257,18 @@ export default function HomePage() {
         <p className="relative text-xs text-white/50 mb-2">
           Total {latest ? `la ${formatDate(latest.date)}` : ""}
         </p>
-        <p className="relative text-4xl font-bold text-white tabular-nums tracking-tight">{fmt(total)}</p>
+        {/* pe ecrane inguste, EUR trece sub RON in loc sa iasa din card */}
+        <div className="relative flex flex-wrap items-baseline gap-x-5 gap-y-1">
+          {[
+            { amount: total, currency: "RON" },
+            { amount: total / rates.EUR, currency: "EUR" },
+          ].map(({ amount, currency }) => (
+            <p key={currency} className="text-4xl font-bold text-white tabular-nums tracking-tight">
+              {Math.round(amount).toLocaleString("ro-RO")}
+              <span className="text-lg font-semibold text-white/60 ml-1.5">{currency}</span>
+            </p>
+          ))}
+        </div>
         {previous && previousTotal !== null && (
           <span
             className={
